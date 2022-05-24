@@ -1,6 +1,6 @@
 # Offline Docs
 
-This plugin makes it easy to fetch the latest xplr docs and browse offline.
+This plugin makes it easy to fetch the appropriate version of xplr docs and browse offline.
 
 ## Usage
 
