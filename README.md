@@ -1,15 +1,30 @@
-# xplr plugin template
+# Offline Docs
 
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+This plugin makes it easy to fetch the latest xplr docs and browse offline.
 
-> **NOTE:** The `src` directory is a symlink to `.` for compatibility reasons.
-> It may be removed in the future.
+## Usage
+
+- Type <kbd>:</kbd> <kbd>?</kbd> to browse the offline docs.
+- Delete the docs directory and try the same keys to fetch the latest docs.
+
+NOTE: The `version` defined in your `~/.config/xplr/init.lua` should be correct.
 
 ## Requirements
 
-- Some tool
+- curl
+- tar
 
 ## Installation
+
+### Install using xpm.xplr
+
+```lua
+require("xpm").setup({
+  -- ...
+  { name = "sayanarijit/offline-docs.xplr" },
+  -- ...
+})
+```
 
 ### Install manually
 
@@ -29,24 +44,19 @@ Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/{username}/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/sayanarijit/offline-docs.xplr ~/.config/xplr/plugins/offline-docs
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
+  require("offline-docs").setup()
 
   -- Or
 
-  require("{plugin}").setup{
+  require("offline-docs").setup{
     mode = "action",
-    key = ":",
+    key = "?",
+    local_path = os.getenv("HOME") .. "/.local/share/xplr/doc"
   }
-
-  -- Type `::` and enjoy.
   ```
-
-## Features
-
-- Some cool feature
