@@ -56,7 +56,7 @@ local function setup(args)
   args.mode = args.mode or "action"
   args.key = args.key or "?"
   args.local_path = args.local_path
-    or (os.getenv("HOME") .. "/.local/share/xplr/doc")
+    or (os.getenv("HOME") .. "/.local/share/xplr/doc/" .. version)
 
   local script = string.format(fetch_script, repo_url, version, args.local_path)
 

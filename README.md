@@ -57,6 +57,6 @@ require("xpm").setup({
   require("offline-docs").setup{
     mode = "action",
     key = "?",
-    local_path = os.getenv("HOME") .. "/.local/share/xplr/doc"
+    local_path = os.getenv("HOME") .. "/.local/share/xplr/doc/" .. version
   }
   ```
