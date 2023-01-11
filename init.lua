@@ -27,28 +27,28 @@ mkdir -p -- "$EXAMPLES_DIR"
 
 cd -- "$TMP_DIR"
 
-echo "LogInfo: Fetching docs for xplr $VERSION ..." | tee -a "$XPLR_PIPE_MSG_IN"
+"$XPLR" -m "LogInfo: Fetching docs for xplr $VERSION ..."
 
 curl -sL "$TARBALL_URL" -o "xplr.tgz"
 
-echo "LogInfo: Extracting docs ..." | tee -a "$XPLR_PIPE_MSG_IN"
+"$XPLR" -m "LogInfo: Extracting docs ..."
 
 tar -xzf "xplr.tgz"
 
 cd "xplr-$VERSION"
 
-echo "LogInfo: Storing docs ..." | tee -a "$XPLR_PIPE_MSG_IN"
+"$XPLR" -m "LogInfo: Storing docs ..."
 
 (cd "./docs/en/src/" && mv -f * "$DOC_DIR/")
 mv -f "./src/init.lua" "$EXAMPLES_DIR/init.lua"
 
 cd "$LOCAL_PATH"
 
-echo "LogInfo: Cleaning up ..." | tee -a "$XPLR_PIPE_MSG_IN"
+"$XPLR" -m "LogInfo: Cleaning up ..."
 
 rm -rf "${TMP_DIR:?}"
 
-echo "LogSuccess: xplr $VERSION docs is now available offline" | tee -a "$XPLR_PIPE_MSG_IN"
+"$XPLR" -m "LogSuccess: xplr $VERSION docs is now available offline"
 ]===]
 
 local function setup(args)
