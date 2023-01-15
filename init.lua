@@ -1,6 +1,11 @@
 ---@diagnostic disable
 local xplr = xplr
 local version = version
+
+if xplr.util and xplr.util.version then
+  local v = xplr.util.version()
+  version = string.format("%s.%s.%s", v.major, v.minor, v.patch)
+end
 ---@diagnostic enable
 
 local repo_url = "https://github.com/sayanarijit/xplr"

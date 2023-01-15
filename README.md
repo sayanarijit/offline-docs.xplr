@@ -7,8 +7,6 @@ This plugin makes it easy to fetch the appropriate version of xplr docs and brow
 - Type <kbd>:</kbd> <kbd>?</kbd> to browse the offline docs.
 - Delete the docs directory and try the same keys to re-fetch the docs.
 
-NOTE: The `version` defined in your `~/.config/xplr/init.lua` should be correct.
-
 ## Requirements
 
 - curl
